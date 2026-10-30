@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E-Invitation Release Countdown</title>
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #100d09;
+  color: #e8c477;
+  font-family: Georgia, serif;
+  text-align: center;
+}
+h1 { letter-spacing: 4px; }
+#timer {
+  font-size: clamp(100px, 25vw, 220px);
+  font-weight: bold;
+}
+p { letter-spacing: 3px; }
+</style>
+</head>
+<body>
+<div>
+  <h1>🪷 E-INVITATION 🪷</h1>
+  <p>THE GRAND REVEAL BEGINS IN</p>
+  <div id="timer">30</div>
+  <h2 id="message">GET READY!</h2>
+</div>
+<script>
+let count = 30;
+const timer = document.getElementById("timer");
+const message = document.getElementById("message");
+
+const interval = setInterval(() => {
+  count--;
+  timer.textContent = count;
+
+  if (count === 0) {
+    clearInterval(interval);
+    message.textContent = "THE E-INVITATION IS LIVE!";
+  }
+}, 1000);
+</script>
+</body>
+</html>
